@@ -13,7 +13,7 @@ const SecondScreen = ({ onNext }) => {
       transition={{ duration: 0.5 }}
     >
       <motion.div
-        className="bg-white/80 backdrop-blur-md p-8 rounded-3xl shadow-lg max-w-md w-full text-center relative overflow-hidden mx-4"
+        className="bg-white/80 backdrop-blur-md p-6 rounded-3xl shadow-lg max-w-md w-full text-center relative overflow-hidden mx-4"
         initial={{ scale: 0.9, y: 20 }}
         animate={{ scale: 1, y: 0 }}
         transition={{
@@ -27,7 +27,7 @@ const SecondScreen = ({ onNext }) => {
         {[...Array(6)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute text-pink-300"
+            className="absolute text-rose-300"
             initial={{
               x: Math.random() * 300 - 150,
               y: 150,
@@ -61,12 +61,12 @@ const SecondScreen = ({ onNext }) => {
         ))}
 
         <motion.h1
-          className="text-3xl font-bold mb-6 text-[#a855f7] font-poppins relative z-10"
+          className="text-3xl font-semibold mb-6 text-gradient bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 font-quicksand"
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.5 }}
         >
-          It's something I've never told anyone...
+          Something I’ve never shared before...
         </motion.h1>
 
         <motion.div

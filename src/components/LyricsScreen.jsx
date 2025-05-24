@@ -7,22 +7,22 @@ const placeholderLyrics = [
   {
     id: 1,
     text: "You just want attention, you don't want my heart",
-    time: 0.5,
+    time: 0.8,
   },
   {
     id: 2,
     text: "Maybe you just hate the thought of me with someone new",
-    time: 5.5,
+    time: 6,
   },
   {
     id: 3,
     text: "Yeah, you just want attention, I knew from the start",
-    time: 10.5,
+    time: 11,
   },
   {
     id: 4,
     text: "You're just making sure I'm never gettin' over you",
-    time: 16,
+    time: 16.5,
   },
 ];
 
@@ -67,37 +67,41 @@ const LyricsScreen = ({ audioRef }) => {
     >
       <div className="max-w-3xl w-full">
         <AnimatePresence>
-          {visibleLyrics.map((lyric, index) => (
-            <motion.div
-              key={lyric.id}
-              initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
-              animate={{
-                opacity: 1,
-                y: 0,
-                filter: "blur(0px)",
-                scale: index === visibleLyrics.length - 1 ? [1, 1.05, 1] : 1,
-              }}
-              transition={{
-                duration: 0.8,
-                scale: {
-                  duration: 2,
-                  repeat:
+          {visibleLyrics.length > 0 &&
+            visibleLyrics.map((lyric, index) => (
+              <motion.div
+                key={lyric.id}
+                initial={{
+                  opacity: 0,
+                  y: 20,
+                  scale: 0.95,
+                  filter: "blur(8px)",
+                }}
+                animate={{
+                  opacity: index === visibleLyrics.length - 1 ? 1 : 0.5,
+                  y: 0,
+                  scale: 1,
+                  filter: "blur(0px)",
+                }}
+                exit={{ opacity: 0, y: -20, scale: 0.95, filter: "blur(8px)" }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="mb-4 text-center"
+              >
+                <p
+                  className={`text-xl md:text-4xl tracking-wide leading-relaxed relative ${
                     index === visibleLyrics.length - 1
-                      ? Number.POSITIVE_INFINITY
-                      : 0,
-                  repeatType: "loop",
-                },
-              }}
-              className="mb-4 text-center"
-            >
-              <p className="text-2xl md:text-4xl font-lora tracking-wide leading-relaxed relative z-10">
-                <span className="font-semibold">{lyric.text}</span>
-              </p>
-            </motion.div>
-          ))}
+                      ? "text-white font-semibold"
+                      : "text-white/50"
+                  }`}
+                >
+                  {lyric.text}
+                </p>
+              </motion.div>
+            ))}
         </AnimatePresence>
       </div>
     </motion.div>
+    
   );
 };
 

@@ -10,21 +10,21 @@ const CustomButton = ({
 }) => {
   const variants = {
     primary: {
-      bg: "bg-gradient-to-r from-[#ec4899] to-[#db2777]",
-      hover: "hover:from-[#db2777] hover:to-[#be185d]",
-      shadow: "shadow-[0_0_15px_rgba(236,72,153,0.5)]",
+      bg: "bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500",
+      hover: "hover:from-pink-500 hover:via-purple-600 hover:to-indigo-600",
+      shadow: "shadow-[0_0_15px_rgba(139,92,246,0.5)]",
       text: "text-white",
     },
     secondary: {
-      bg: "bg-gradient-to-r from-[#a855f7] to-[#8b5cf6]",
-      hover: "hover:from-[#8b5cf6] hover:to-[#7c3aed]",
+      bg: "bg-gradient-to-r from-purple-500 to-pink-500",
+      hover: "hover:from-pink-600 hover:to-purple-600",
       shadow: "shadow-[0_0_15px_rgba(168,85,247,0.5)]",
       text: "text-white",
     },
     reveal: {
-      bg: "bg-gradient-to-r from-[#3b82f6] to-[#2563eb]",
-      hover: "hover:from-[#2563eb] hover:to-[#1d4ed8]",
-      shadow: "shadow-[0_0_15px_rgba(59,130,246,0.5)]",
+      bg: "bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600",
+      hover: "hover:from-pink-700 hover:via-purple-700 hover:to-indigo-700",
+      shadow: "shadow-[0_0_15px_rgba(107,33,168,0.5)]",
       text: "text-white",
     },
   };

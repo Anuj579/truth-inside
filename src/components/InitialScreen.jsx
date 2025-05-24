@@ -13,7 +13,7 @@ const InitialScreen = ({ onNext }) => {
       transition={{ duration: 0.5 }}
     >
       <motion.div
-        className="bg-white/80 backdrop-blur-md p-8 rounded-3xl shadow-lg max-w-md w-full text-center mx-4"
+        className="bg-gradient-to-br from-[#fff1f9] via-white to-[#e0f2fe] bg-opacity-70 backdrop-blur-md p-6 rounded-3xl shadow-xl max-w-md w-full text-center mx-4"
         initial={{ scale: 0.9, y: 20 }}
         animate={{ scale: 1, y: 0 }}
         transition={{
@@ -27,13 +27,13 @@ const InitialScreen = ({ onNext }) => {
           className="mb-6 text-[#ec4899]"
           initial={{ scale: 0, rotate: -10 }}
           animate={{
-            scale: [0, 1.2, 1],
-            rotate: [-10, 10, 0],
+            scale: [1, 1.15, 1],
+            rotate: [0, 10, -10, 0],
           }}
           transition={{
-            delay: 0.4,
-            duration: 0.8,
-            times: [0, 0.6, 1],
+            repeat: Infinity,
+            duration: 2,
+            ease: "easeInOut",
           }}
         >
           <svg
@@ -47,7 +47,7 @@ const InitialScreen = ({ onNext }) => {
         </motion.div>
 
         <motion.h1
-          className="text-3xl font-bold mb-6 text-[#be185d] font-poppins"
+          className="text-3xl font-semibold mb-6 text-gradient bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 font-quicksand"
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.5 }}

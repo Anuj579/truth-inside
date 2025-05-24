@@ -23,7 +23,7 @@ const EmotionalBackground = () => {
   return (
     <div className="fixed inset-0 w-full h-full overflow-hidden pointer-events-none z-0">
       {/* Gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a] via-[#1e293b] to-[#0f172a]"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a] via-[#161f2c] to-[#0f172a]"></div>
 
       {/* Subtle glow in the center */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vh] rounded-full bg-[#3b82f6] opacity-[0.03] blur-[100px]"></div>

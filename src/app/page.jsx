@@ -6,20 +6,8 @@ import InitialScreen from "@/components/InitialScreen";
 import SecondScreen from "@/components/SecondScreen";
 import ThirdScreen from "@/components/ThirdScreen";
 import LyricsScreen from "@/components/LyricsScreen";
-import { Poppins, Playfair_Display } from "next/font/google";
 import CuteBackground from "@/components/CuteBackground";
 import EmotionalBackground from "@/components/EmotionalBackground";
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-poppins",
-});
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-playfair",
-});
 
 export default function Home() {
   const [step, setStep] = useState(1);
@@ -46,7 +34,7 @@ export default function Home() {
     <main
       className={`min-h-[100dvh] transition-colors duration-1000 ${
         isDarkTheme ? "bg-[#0f172a]" : "bg-[#fdf4ff]"
-      } ${poppins.variable} ${playfair.variable} overflow-hidden`}
+      } overflow-hidden`}
     >
       <audio ref={audioRef} src="/attention.mp3" preload="auto" />
 

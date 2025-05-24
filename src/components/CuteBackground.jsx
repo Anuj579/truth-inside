@@ -11,7 +11,7 @@ const CuteBackground = () => {
     const shapes = ["heart", "star", "circle", "cloud"];
     const colors = ["#f9a8d4", "#c4b5fd", "#93c5fd", "#a5f3fc", "#fde68a"];
 
-    const newElements = Array.from({ length: 20 }, (_, i) => ({
+    const newElements = Array.from({ length: 25 }, (_, i) => ({
       id: i,
       x: Math.random() * 100,
       y: Math.random() * 100,
@@ -83,7 +83,7 @@ const CuteBackground = () => {
           initial={{
             x: `${element.x}vw`,
             y: `${element.y}vh`,
-            opacity: 0,
+            opacity: 0.6,
             rotate: element.rotation,
           }}
           animate={{
@@ -97,7 +97,7 @@ const CuteBackground = () => {
               `${(element.y + 10) % 100}vh`,
               `${element.y}vh`,
             ],
-            opacity: [0, 0.8, 0],
+            opacity: [0.6, 1, 0.6],
             rotate: [
               element.rotation,
               element.rotation + 180,
@@ -107,14 +107,12 @@ const CuteBackground = () => {
           transition={{
             duration: element.duration,
             repeat: Number.POSITIVE_INFINITY,
-            delay: element.delay,
             ease: "easeInOut",
           }}
           style={{
             width: `${element.size}px`,
             height: `${element.size}px`,
             color: element.color,
-            filter: "drop-shadow(0 0 2px rgba(255,255,255,0.5))",
           }}
         >
           {element.shape === "circle" ? (
